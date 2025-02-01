@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <h2>Agendar Transferência</h2>
+  <form (ngSubmit)="agendar()">
+    <div class="mb-3">
+      <label for="contaOrigem" class="form-label">Conta Origem</label>
+      <input id="contaOrigem" [(ngModel)]="transferencia.contaOrigem" name="contaOrigem" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label for="contaDestino" class="form-label">Conta Destino</label>
+      <input id="contaDestino" [(ngModel)]="transferencia.contaDestino" name="contaDestino" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label for="valor" class="form-label">Valor</label>
+      <input id="valor" type="number" [(ngModel)]="transferencia.valor" name="valor" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label for="dataTransferencia" class="form-label">Data de Transferência</label>
+      <input id="dataTransferencia" type="date" [(ngModel)]="transferencia.dataTransferencia" name="dataTransferencia" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Agendar</button>
+    <hr>
+    <button class="btn btn-primary float-right" (click)="navegarParaListar()">Ver Listar Transferências</button>
+  </form>
+  <p *ngIf="mensagem" class="mt-3">{{ mensagem }}</p>
+
+</div>

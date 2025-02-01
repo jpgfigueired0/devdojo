@@ -1,0 +1,25 @@
+<div class="container mt-4">
+  <h2>Lista de Transferências</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Conta Origem</th>
+        <th>Conta Destino</th>
+        <th>Valor</th>
+        <th>Data Transferência</th>
+        <th>Taxa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transferencia of transferencias">
+        <td>{{ transferencia.contaOrigem }}</td>
+        <td>{{ transferencia.contaDestino }}</td>
+        <td>{{ transferencia.valor | currency:'BRL' }}</td>
+        <td>{{ transferencia.dataTransferencia | date:'dd/MM/yyyy' }}</td>
+        <td>{{ transferencia.taxa | currency:'BRL' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-primary float-right" (click)="agendarTransf()">Agendar nova Transferência</button>
+</div>
